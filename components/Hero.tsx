@@ -11,7 +11,6 @@ import {
   MessageSquare,
   ChevronDown,
   Sparkles,
-  Code2,
   Rocket,
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";

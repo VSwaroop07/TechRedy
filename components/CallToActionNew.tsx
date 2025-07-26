@@ -91,7 +91,7 @@ export default function CallToAction() {
             <ScrollAnimation direction="fade" duration={0.8} delay={0.6}>
               <div className="mt-16">
                 <p className="text-lg text-blue-200 max-w-2xl mx-auto">
-                  Don't let another day pass wondering "what if". Take the first
+                  Don&apos;t let another day pass wondering &quot;what if&quot;. Take the first
                   step towards your dream tech career today. Your future self
                   will thank you.
                 </p>

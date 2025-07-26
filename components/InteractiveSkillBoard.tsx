@@ -174,7 +174,6 @@ export default function InteractiveSkillBoard() {
     mastered: [],
     planning: [],
   });
-  const [draggedItem, setDraggedItem] = useState<string | null>(null);
 
   // Ensure component only renders interactive features on client
   useEffect(() => {

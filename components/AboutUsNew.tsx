@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Heart, BookOpen, Award, Target, Lightbulb } from "lucide-react";
+import { Users, Heart, BookOpen, Target, Lightbulb } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
 export default function AboutUs() {
@@ -54,7 +54,7 @@ export default function AboutUs() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TechRedy is more than just a learning platform—we're a community
+              TechRedy is more than just a learning platform—we&apos;re a community
               dedicated to democratizing technology education and creating
               pathways to successful tech careers.
             </p>
@@ -76,7 +76,7 @@ export default function AboutUs() {
                     small initiative to empower aspiring technologists.
                   </p>
                   <p>
-                    Today, we've grown into a comprehensive learning ecosystem
+                    Today, we&apos;ve grown into a comprehensive learning ecosystem
                     that combines cutting-edge curriculum, personalized
                     mentorship, and real-world project experience.
                   </p>
@@ -164,7 +164,7 @@ export default function AboutUs() {
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
               Join thousands of learners who have successfully transitioned into
-              tech careers with TechRedy's comprehensive programs and supportive
+              tech careers with TechRedy&apos;s comprehensive programs and supportive
               community.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
