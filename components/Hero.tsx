@@ -153,7 +153,7 @@ export default function Hero() {
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl">
               <Image
-                src="/images/logos/techredylogo.PNG"
+                src="/images/logos/techredylogo.png"
                 alt="TechRedy Logo"
                 width={64}
                 height={64}
