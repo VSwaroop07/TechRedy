@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.ico" },
       {
-        url: "../public/techredylogo.png",
+        url: "/techredylogo.png",
         sizes: "16x16",
         type: "image/png",
       },
