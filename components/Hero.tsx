@@ -158,8 +158,6 @@ export default function Hero() {
                 width={64}
                 height={64}
                 className="object-contain"
-                priority
-                unoptimized
               />
             </div>
           </div>
