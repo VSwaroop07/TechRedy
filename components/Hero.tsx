@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import img1 from "../public/techredylogo.png";
 import {
   ArrowRight,
   Users,
@@ -150,7 +151,7 @@ export function Hero() {
           className="flex justify-center gap-4 mb-6"
         >
           <Image
-            src="/techredylogo.png" // Path relative to the public folder
+            src={img1} // Path relative to the public folder
             alt="Image 1"
             width={75} // Adjust width
             height={75} // Adjust height
