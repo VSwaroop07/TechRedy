@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import {
   ArrowRight,
   Users,
@@ -151,14 +152,14 @@ export default function Hero() {
         >
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl">
-              <img
+              <Image
                 src="/techredylogo.png"
                 alt="TechRedy Logo"
                 width={64}
                 height={64}
                 className="object-contain"
-                loading="eager"
-                style={{ maxWidth: "100%", height: "auto" }}
+                priority
+                unoptimized
               />
             </div>
           </div>
