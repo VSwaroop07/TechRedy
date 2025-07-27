@@ -2,8 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import OptimizedImage from "@/components/ui/OptimizedImage";
-import { IMAGES } from "@/lib/constants/images";
+import img1 from "../public/techredylogo.png";
 import {
   ArrowRight,
   Users,
@@ -16,6 +15,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -153,8 +153,8 @@ export default function Hero() {
         >
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl">
-              <OptimizedImage
-                src={IMAGES.logos.techRedy}
+              <Image
+                src={img1}
                 alt="TechRedy Logo"
                 width={64}
                 height={64}
