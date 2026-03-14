@@ -44,7 +44,17 @@ export function Hero() {
   });
 
   const heroRef = useRef<HTMLElement>(null);
-  const fullText = "TechRedy";
+  const fullText = "TechRedy IT Training";
+
+  const logos = [
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg",     // React
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg",  // Node.js
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg",     // Docker
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg",     // GitHub
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg", // JavaScript
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",     // Python
+];
+
 
   // Dynamic badge messages
   const badgeMessages = [
@@ -175,10 +185,10 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white "
     >
       {/* Animated Background Particles */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         {isMounted &&
           particles.map((particle, i) => (
             <motion.div
@@ -201,10 +211,48 @@ export function Hero() {
               }}
             />
           ))}
-      </div>
+      </div> */}
+
+
+      <div className="absolute inset-0 overflow-hidden">
+  {isMounted &&
+    particles.map((particle, i) => {
+      const logo = logos[i % logos.length];
+
+      return (
+        <motion.div
+          key={i}
+          animate={{
+            x: [0, Math.sin(i) * 40],
+            y: [0, Math.cos(i) * 40],
+            rotate: [0, 360],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 6 + (i % 4),
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          style={{
+            position: "absolute",
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+          }}
+        >
+          <Image
+            src={logo}
+            alt="tech logo"
+            width={40}
+            height={40}
+            className="opacity-20"
+          />
+        </motion.div>
+      );
+    })}
+</div>
 
       {/* Interactive cursor follow effect */}
-      {isHovering && (
+      {/* {isHovering && (
         <motion.div
           className="absolute w-32 h-32 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl pointer-events-none"
           animate={{
@@ -220,12 +268,12 @@ export function Hero() {
             transform: "translate(-50%, -50%)",
           }}
         />
-      )}
+      )} */}
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -247,7 +295,7 @@ export function Hero() {
               </Badge>
             </motion.div>
           </AnimatePresence>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -255,19 +303,19 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="flex justify-center gap-4 mb-6"
         >
-          <motion.div
+          {/* <motion.div
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
-          >
+          > */}
             <Image
               src="/techredylogo.png" // Path relative to the public folder
               alt="TechRedy Logo"
-              width={75} // Adjust width
-              height={75} // Adjust height
-              className="object-cover cursor-pointer"
+              width={100} // Adjust width
+              height={100} // Adjust height
+              
             />
-          </motion.div>
+          {/* </motion.div> */}
         </motion.div>
         {/* Logo and Main Title */}
         <motion.div
@@ -277,12 +325,12 @@ export function Hero() {
           className="mb-8"
         >
           <motion.h1
-            className="text-6xl md:text-8xl font-bold text-white mb-4"
+            className="text-2xl md:text-4xl font-bold text-white mb-4"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              {displayText}
+            <span className="text-[#F09526]">
+             {displayText}
             </span>
             {!isTypingComplete && <span className="animate-pulse">|</span>}
           </motion.h1>
@@ -295,18 +343,10 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-12"
         >
-          <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-[#3665AA] max-w-4xl mx-auto leading-relaxed">
             Transform your tech career with{" "}
-            <span className="text-blue-300 font-semibold">free resources</span>,
-            <span className="text-purple-300 font-semibold">
-              {" "}
-              expert mentorship
-            </span>
-            , and
-            <span className="text-pink-300 font-semibold">
-              {" "}
-              comprehensive training
-            </span>
+            <span className="text-blue-300 font-semibold">Advanced resources , expert mentorship , comprehensive training</span>
+            
             . Join our community of passionate learners and industry
             professionals.
           </p>
@@ -323,10 +363,10 @@ export function Hero() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-gradient-to-r from-[#3665AA] to-[#F09526] hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 <Rocket className="w-5 h-5 mr-2" />
-                Start Your Journey
+                Join Courses
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </motion.div>
@@ -337,14 +377,14 @@ export function Hero() {
                 className="border-2 border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg font-semibold transition-all duration-300"
               >
                 <MessageSquare className="w-5 h-5 mr-2" />
-                Join Community
+                Internship Program
               </Button>
             </motion.div>
           </div>
         </motion.div>
 
         {/* Stats */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
@@ -379,10 +419,10 @@ export function Hero() {
             </div>
             <p className="text-blue-200 font-medium">Success Rate</p>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
@@ -395,23 +435,10 @@ export function Hero() {
             <span className="text-sm mb-2">Discover More</span>
             <ChevronDown className="w-6 h-6 animate-bounce" />
           </button>
-        </motion.div>
-      </div>
+        </motion.div> */}
+      </div> 
 
-      {/* Decorative Elements */}
-      {isMounted && (
-        <>
-          <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-float"></div>
-          <div
-            className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 animate-float"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 right-10 w-16 h-16 bg-gradient-to-br from-pink-400 to-blue-500 rounded-full opacity-20 animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </>
-      )}
+     
     </section>
   );
 }
